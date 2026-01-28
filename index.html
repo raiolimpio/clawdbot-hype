@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clawdbot | O Futuro da Automação Pessoal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            500: '#ef4444', // Red for intensity/claw
+                            900: '#111827'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .terminal-shadow {
+            box-shadow: 0 0 50px rgba(239, 68, 68, 0.15);
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #f87171, #fca5a5);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-gray-950 text-gray-200 antialiased selection:bg-brand-500 selection:text-white">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 bg-gray-950/80 backdrop-blur-md border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center gap-2">
+                    <span class="text-2xl">🦞</span>
+                    <span class="font-bold text-xl tracking-tight text-white">Clawdbot</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#features" class="hover:text-white transition-colors">Funcionalidades</a>
+                        <a href="#community" class="hover:text-white transition-colors">Comunidade</a>
+                        <a href="https://github.com/clawdbot/clawdbot" target="_blank" class="px-4 py-2 rounded-md bg-white text-gray-900 font-semibold hover:bg-gray-200 transition-colors">GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <div class="inline-block mb-4 px-3 py-1 rounded-full bg-gray-900 border border-gray-700 text-sm font-mono text-gray-400">
+                v2026.1 Stable Release
+            </div>
+            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight text-white mb-6">
+                Sua IA. Suas Regras.<br>
+                <span class="gradient-text">Rodando Localmente.</span>
+            </h1>
+            <p class="mt-4 max-w-2xl mx-auto text-xl text-gray-400">
+                Esqueça os chats limitados. O Clawdbot é um agente autônomo que vive no seu terminal, acessa seus arquivos e integra com Telegram, WhatsApp e Discord.
+            </p>
+            <div class="mt-10 flex justify-center gap-4">
+                <a href="#install" class="px-8 py-4 bg-brand-500 hover:bg-brand-600 text-white font-bold rounded-lg transition-all shadow-lg shadow-brand-500/20">
+                    Começar Agora
+                </a>
+                <a href="#demo" class="px-8 py-4 bg-gray-800 hover:bg-gray-700 text-white font-semibold rounded-lg border border-gray-700 transition-all">
+                    Ver Demo
+                </a>
+            </div>
+        </div>
+        
+        <!-- Background Grid -->
+        <div class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 z-0"></div>
+    </section>
+
+    <!-- Terminal Demo -->
+    <section class="py-10 bg-gray-900 border-y border-gray-800">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="bg-gray-950 rounded-xl border border-gray-800 terminal-shadow overflow-hidden">
+                <div class="flex items-center px-4 py-2 bg-gray-900 border-b border-gray-800 gap-2">
+                    <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                    <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                    <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                    <div class="ml-4 text-xs text-gray-500 font-mono">user@machine:~/clawdbot</div>
+                </div>
+                <div class="p-6 font-mono text-sm md:text-base space-y-4">
+                    <div class="flex">
+                        <span class="text-green-400 mr-2">➜</span>
+                        <span class="text-white">clawdbot start</span>
+                    </div>
+                    <div class="text-gray-400">
+                        Initializing Gateway on localhost:3000...<br>
+                        <span class="text-blue-400">ℹ</span> Connected to Telegram (User: Rai)<br>
+                        <span class="text-blue-400">ℹ</span> Loaded skills: github, notion, file-system<br>
+                        <span class="text-green-400">✔</span> Ready. Waiting for commands.
+                    </div>
+                    <div class="flex pt-4">
+                        <span class="text-blue-400 font-bold mr-2">[Telegram] Rai:</span>
+                        <span class="text-gray-300">Verifique se o servidor caiu e me avise.</span>
+                    </div>
+                    <div class="text-gray-400 pl-4 border-l-2 border-gray-800">
+                        <span class="text-purple-400">Thinking...</span> Pinging 192.168.1.50... No response.<br>
+                        Executing: <span class="text-yellow-300">systemctl status nginx</span><br>
+                        Result: Failed.<br>
+                        Action: Sending alert to user.
+                    </div>
+                    <div class="flex">
+                        <span class="text-red-400 font-bold mr-2">[Clawdbot]:</span>
+                        <span class="text-white">🚨 O servidor está offline. Tentei reiniciar o Nginx mas falhou. Quer que eu verifique os logs de erro?</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Grid -->
+    <section id="features" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-white mb-4">Por que todo mundo está falando disso?</h2>
+                <p class="text-gray-400">Não é só mais um wrapper da OpenAI. É infraestrutura de agente pessoal.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="p-8 rounded-2xl bg-gray-900 border border-gray-800 hover:border-gray-600 transition-all group">
+                    <div class="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center mb-6 group-hover:bg-brand-500 transition-colors">
+                        🔒
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Privacidade Total</h3>
+                    <p class="text-gray-400">Seus dados, seus tokens, suas chaves. O Clawdbot roda na sua máquina ou VPS. Nada de "nuvem misteriosa" lendo seus arquivos.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="p-8 rounded-2xl bg-gray-900 border border-gray-800 hover:border-gray-600 transition-all group">
+                    <div class="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center mb-6 group-hover:brand-500 transition-colors">
+                        🛠️
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Acesso Real ao OS</h3>
+                    <p class="text-gray-400">Diferente do ChatGPT, ele pode criar arquivos, rodar comandos shell, fazer commits no git e acessar seu localhost.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="p-8 rounded-2xl bg-gray-900 border border-gray-800 hover:border-gray-600 transition-all group">
+                    <div class="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center mb-6 group-hover:brand-500 transition-colors">
+                        🤖
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Agnóstico de Modelo</h3>
+                    <p class="text-gray-400">Use GPT-4, Claude 3.5 Sonnet, ou rode modelos locais (Llama 3, Mistral) via Ollama para custo zero.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community / Hype Section -->
+    <section id="community" class="py-24 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-white mb-12 text-center">O que dizem no Reddit & Twitter</h2>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Tweet 1 -->
+                <div class="bg-gray-950 p-6 rounded-xl border border-gray-800">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-gray-700 rounded-full mr-3"></div>
+                        <div>
+                            <div class="font-bold text-white">dev_master_99</div>
+                            <div class="text-xs text-gray-500">r/LocalLLaMA</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-300">"Finalmente um assistente que não fica preso no navegador. Configurei o Clawdbot para monitorar meus logs do servidor e me avisar no Telegram. Salvou minha produção ontem à noite."</p>
+                </div>
+
+                <!-- Tweet 2 -->
+                <div class="bg-gray-950 p-6 rounded-xl border border-gray-800">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-gray-700 rounded-full mr-3"></div>
+                        <div>
+                            <div class="font-bold text-white">sysadmin_br</div>
+                            <div class="text-xs text-gray-500">r/selfhosted</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-300">"A integração com Notion é absurda. Eu falo 'adiciona na lista de compras' no WhatsApp e ele atualiza minha página do Notion na hora. A latência é quase zero."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-gray-800 text-center">
+        <p class="text-gray-500 mb-4">Open Source. Community Driven. Unstoppable.</p>
+        <div class="text-sm text-gray-600">
+            &copy; 2026 Clawdbot Project. Não afiliado à Anthropic ou OpenAI.
+        </div>
+    </footer>
+
+</body>
+</html>
